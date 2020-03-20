@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>Hello User!!</h1>
+
+<form action="createvm" , method="POST">
+
+    {% csrf_token %}
+
+    Enter below details for Private Network Creation or leave blank for VM to connect to External network : </br>
+    Network Name:    <input type="text" name="nwname"></br>
+    Subnet Name:  <input type="text" name="sbname"></br>
+    CIDR: <input type="text" name="cidr"></br>
+    Router Name:   <input type="text" name="rtr"></br>
+    </br>
+    </br>
+    </br>
+    Enter below details for VM Creation: </br>
+    VM Name:    <input type="text" name="name"></br>
+    VM Flavor:  <input type="text" name="flav"></br>
+    VM Image:   <input type="text" name="img"></br>
+
+
+    <input type="submit">
+</form>
+
+{% endblock %}
